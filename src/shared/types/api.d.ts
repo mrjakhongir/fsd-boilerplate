@@ -1,3 +1,0 @@
-type CustomType = {
-  id: numer;
-};

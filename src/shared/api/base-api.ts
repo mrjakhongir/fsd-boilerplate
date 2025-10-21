@@ -1,6 +1,6 @@
 import { apiClient } from "./api-client";
 
-export class BaseApi<TData, TCreate, TUpdate> {
+export class BaseApi<TData = unknown, TCreate = unknown, TUpdate = unknown> {
   protected basePath: string;
   constructor(basePath: string) {
     this.basePath = basePath;
@@ -10,7 +10,7 @@ export class BaseApi<TData, TCreate, TUpdate> {
     return apiClient.get<TData[]>(this.basePath, { params });
   }
 
-  detail(id: string) {
+  detail(id: number) {
     return apiClient.get<TData>(`${this.basePath}/${id}`);
   }
 
@@ -18,11 +18,11 @@ export class BaseApi<TData, TCreate, TUpdate> {
     return apiClient.post<TData>(this.basePath, data);
   }
 
-  update(id: string, data: TUpdate) {
+  update(id: number, data: TUpdate) {
     return apiClient.put<TData>(`${this.basePath}/${id}`, data);
   }
 
-  delete(id: string) {
+  delete(id: number) {
     return apiClient.delete(`${this.basePath}/${id}`);
   }
 }

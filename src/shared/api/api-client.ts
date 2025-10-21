@@ -2,7 +2,7 @@ import axios from "axios";
 import { tokenService } from "./token-service";
 
 export const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
+  baseURL: import.meta.env.VITE_API_URL || "https://jsonplaceholder.typicode.com",
   withCredentials: true,
 });
 
