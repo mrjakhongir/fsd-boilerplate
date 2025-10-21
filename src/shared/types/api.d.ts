@@ -1,0 +1,3 @@
+type CustomType = {
+  id: numer;
+};
