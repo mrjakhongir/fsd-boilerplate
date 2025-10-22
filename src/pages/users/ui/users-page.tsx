@@ -4,7 +4,12 @@ import { Container, Flex } from "@chakra-ui/react";
 const UsersPage = () => {
   return (
     <Flex>
-      <Container py={5}>
+      <Container
+        py="5"
+        fontFamily="heading"
+        color="primary.500"
+        bg="bg.success"
+      >
         <UsersListWidget />
       </Container>
     </Flex>
